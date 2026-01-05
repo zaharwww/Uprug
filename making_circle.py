@@ -8,7 +8,7 @@ class CircleCreate:
         self.vector_of_points_inside_circle_x = []
         self.vector_of_points_inside_circle_y = []
 
-    def create_circle(self, num_points=1000):
+    def create_circle(self, num_points):
         while self.counter != num_points:
             x_circle = random.uniform(-1 * self.radius_of_circle, -1 * self.radius_of_circle - 2 * self.radius_of_circle)
             y_circle = random.uniform(-1 * self.radius_of_circle, -1 * self.radius_of_circle - 2 * self.radius_of_circle)
