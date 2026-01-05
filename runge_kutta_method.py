@@ -7,4 +7,4 @@ class RungeKutta(CircleCreate):
 
         self.app_name = app_name
 
-        print()
+        print('x')
