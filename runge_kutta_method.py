@@ -12,9 +12,9 @@ class RungeKutta:
         print(circle_object.vector_of_points_inside_circle_x)
         print(circle_object.vector_of_points_inside_circle_y)
 
-    def runge_kutta_x(self, circle_object, step, list_x, general_list_x):
+    def runge_kutta_x(self, circle_object, step, list_x, general_list_x, end_time):
         num_points = len(circle_object.vector_of_points_inside_circle_x)
-        while step <= 2:
+        while step <= end_time:
             for i in range(num_points):
                 list_x = []
                 t_0 = 0
@@ -27,12 +27,12 @@ class RungeKutta:
                 x_11_final = circle_object.vector_of_points_inside_circle_x[i] + step * (1/4 * k_11 + 2/4 * k_12 + 1/4 * k_13)
                 list_x.append(float(x_11_final))
                 general_list_x.append(list_x)
-            step = step + 2
+            step = step + 1
         print(general_list_x)
 
-    def runge_kutta_y(self, circle_object, step, list_y, general_list_y):
+    def runge_kutta_y(self, circle_object, step, list_y, general_list_y, end_time):
         num_points = len(circle_object.vector_of_points_inside_circle_y)
-        while step <= 2:
+        while step <= end_time:
             for i in range(num_points):
                 list_y = []
                 t_0 = 0
@@ -45,5 +45,5 @@ class RungeKutta:
                 x_21_final = circle_object.vector_of_points_inside_circle_y[i] + step * (1/4 * k_21 + 2/4 * k_22 + 1/4 * k_23)
                 list_y.append(float(x_21_final))
                 general_list_y.append(list_y)
-            step = step + 2
+            step = step + 1
         print(general_list_y)
