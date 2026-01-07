@@ -18,10 +18,8 @@ class CircleCreate:
                 self.vector_of_points_inside_circle_x.append(cunt)
                 self.vector_of_points_inside_circle_y.append(y_1)
                 self.vector_of_points_inside_circle_y.append(y_2)
-            cunt = cunt - 0.0005
-        print(self.vector_of_points_inside_circle_x)
-        print(self.vector_of_points_inside_circle_y)
-
+                print(cunt)
+            cunt = cunt - 0.01
 
     def create_circle(self, num_points):
         while self.counter != num_points:
@@ -34,6 +32,7 @@ class CircleCreate:
             self.counter = self.counter + 1
 
     def plot_circle(self):
+       # plt.axis('equal')
         plt.scatter(self.vector_of_points_inside_circle_x, self.vector_of_points_inside_circle_y)
         plt.show()
 
