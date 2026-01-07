@@ -5,8 +5,8 @@ class CircleCreate:
     def __init__(self, radius_of_circle):
         self.radius_of_circle = radius_of_circle
         self.counter = 0
-        self.vector_of_points_inside_circle_x = []
-        self.vector_of_points_inside_circle_y = []
+        self.vector_of_points_inside_circle_x = [-8]
+        self.vector_of_points_inside_circle_y = [-8]
 
     def create_ring(self):
         cunt = -100
@@ -18,7 +18,6 @@ class CircleCreate:
                 self.vector_of_points_inside_circle_x.append(cunt)
                 self.vector_of_points_inside_circle_y.append(y_1)
                 self.vector_of_points_inside_circle_y.append(y_2)
-                print(cunt)
             cunt = cunt + 0.01
 
     def create_circle(self, num_points):

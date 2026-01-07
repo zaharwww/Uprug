@@ -8,16 +8,16 @@ circle.create_circle(0)
 circle.plot_circle()
 
 
-runge_kutta = runge_kutta_method.RungeKutta(circle, 1, 0)
+runge_kutta = runge_kutta_method.RungeKutta(circle, 1, 0.2, 0)
 print()
-runge_kutta.runge_kutta_x(circle, 0, [], 1)
+runge_kutta.runge_kutta(circle, 0.2, 1.5, 0)
+runge_kutta.runge_kutta_fast_step(circle, 0.02, 3.8, 0)
 #runge_kutta.runge_kutta_y(circle, 0.05, [], 0.5)
 #runge_kutta.deformation()
 #runge_kutta.trajectory()
-
 plt.xlim(0, -30)
 plt.ylim(0, -30)
-plt.ioff()  # выключаем
+plt.ioff()
 plt.show()
 
 
