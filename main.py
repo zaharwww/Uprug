@@ -1,6 +1,7 @@
 import making_circle
 import runge_kutta_method
 import matplotlib.pyplot as plt
+import velocity_field
 plt.ion()
 circle = making_circle.CircleCreate(4)
 circle.create_ring()
@@ -26,6 +27,7 @@ plt.ylim(0, -30)
 plt.ioff()
 plt.show()
 
-
+field = velocity_field.VelocityField(x_range=(-30, 2), y_range=(-30, 2), density=20)
+field.plot_multiple_fields(time_list=[0, 1, 2, 3])
 
 
