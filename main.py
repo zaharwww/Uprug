@@ -28,10 +28,11 @@ plt.ylim(0, -30)
 plt.ioff()
 plt.show()
 
-field = velocity_field.VelocityField(x_range=(-30, 2), y_range=(-30, 2), density=20)
-field.plot_multiple_fields(time_list=[0, 1, 2, 3])
+field = velocity_field.VelocityField(x_range=(-30, 2), y_range=(-30, 2), density=50)
+field.plot_velocity_distribution(time_list=[0, 1, 2, 3])
 
 stream = streamlines.Streamlines(x_range=(-30, 2), y_range=(-30, 2), density=50)
+
 fig2, axes2 = stream.plot_multiple_streamlines(
     time_list=[0, 1, 2, 3],
     num_lines=1.2,

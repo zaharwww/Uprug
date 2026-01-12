@@ -36,7 +36,7 @@ class Streamlines:
         density_val = num_lines if num_lines < 5 else num_lines / 10.0
         for i, t in enumerate(time_list):
             U, V = self._get_velocity(t)
-            axes[i].streamplot(self.X, self.Y, U, V, density=density_val, color='purple', arrowsize=1)
+            axes[i].streamplot(self.X, self.Y, U, V, density=density_val, color='blue', arrowsize=1)
             axes[i].set_title(f"Линии тока, t = {t}")
             axes[i].set_xlabel("X")
             axes[i].set_ylabel("Y")
