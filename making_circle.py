@@ -18,7 +18,7 @@ class CircleCreate:
                 self.vector_of_points_inside_circle_x.append(cunt)
                 self.vector_of_points_inside_circle_y.append(y_1)
                 self.vector_of_points_inside_circle_y.append(y_2)
-            cunt = cunt + 0.01
+            cunt = cunt + 0.05
         print(len(self.vector_of_points_inside_circle_x))
     def create_circle(self, num_points):
         while self.counter != num_points:
