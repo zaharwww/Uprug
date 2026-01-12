@@ -9,16 +9,16 @@ class CircleCreate:
         self.vector_of_points_inside_circle_y = [-8]
 
     def create_ring(self):
-        cunt = -100
-        while cunt <= 0:
-            if -3 * self.radius_of_circle ** 2 - cunt ** 2 - 4 * cunt * self.radius_of_circle >= 0:
-                y_1 = - ((-3 * self.radius_of_circle ** 2 - cunt ** 2 - 4 * cunt * self.radius_of_circle) ** (1/2)) - 2 * self.radius_of_circle
-                y_2 = ((-3 * self.radius_of_circle ** 2 - cunt ** 2 - 4 * cunt * self.radius_of_circle) ** (1/2)) - 2 * self.radius_of_circle
-                self.vector_of_points_inside_circle_x.append(cunt)
-                self.vector_of_points_inside_circle_x.append(cunt)
+        count = -100
+        while count <= 0:
+            if -3 * self.radius_of_circle ** 2 - count ** 2 - 4 * count * self.radius_of_circle >= 0:
+                y_1 = - ((-3 * self.radius_of_circle ** 2 - count ** 2 - 4 * count * self.radius_of_circle) ** (1/2)) - 2 * self.radius_of_circle
+                y_2 = ((-3 * self.radius_of_circle ** 2 - count ** 2 - 4 * count * self.radius_of_circle) ** (1/2)) - 2 * self.radius_of_circle
+                self.vector_of_points_inside_circle_x.append(count)
+                self.vector_of_points_inside_circle_x.append(count)
                 self.vector_of_points_inside_circle_y.append(y_1)
                 self.vector_of_points_inside_circle_y.append(y_2)
-            cunt = cunt + 0.05
+            count = count + 0.05
         print(len(self.vector_of_points_inside_circle_x))
     def create_circle(self, num_points):
         while self.counter != num_points:
