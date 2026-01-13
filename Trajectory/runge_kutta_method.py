@@ -3,11 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class RungeKutta:
-    def __init__(self, circle_object, end_time, step, start_time):
+    def __init__(self, circle_object):
         self.circle = circle_object
-        self.end_time = end_time
-        self.step = step
-        self.start_time = start_time
 
     def runge_kutta(self, circle_object, step, end_time, start_time):
         list_of_coordinate_x_forall = []

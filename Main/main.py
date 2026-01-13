@@ -1,14 +1,8 @@
-import sys
-import os
-
-current_dir = os.path.dirname(__file__)
-velocity_field_path = os.path.join(current_dir, '..', 'Field of velocity')
-sys.path.append(os.path.abspath(velocity_field_path))
 
 from Circle import making_circle
 from Trajectory import runge_kutta_method
 import matplotlib.pyplot as plt
-import velocity_field
+from Field_of_velocity import velocity_field
 from StreamLine import streamlines
 
 plt.ion()
@@ -17,14 +11,9 @@ circle.create_ring()
 circle.create_circle(0)
 circle.plot_circle()
 
+runge_kutta = runge_kutta_method.RungeKutta(circle)
+runge_kutta.runge_kutta(circle, 0.001, 0.7, 0)
 
-runge_kutta = runge_kutta_method.RungeKutta(circle, 1.6, 0.2, 0)
-print()
-runge_kutta.runge_kutta(circle, 0.01, 0.7, 0)
-
-#runge_kutta.runge_kutta_y(circle, 0.05, [], 0.5)
-#runge_kutta.deformation()
-#runge_kutta.trajectory()
 plt.xlim(0, -40)
 plt.ylim(0, -30)
 plt.xlabel('X1')
@@ -33,7 +22,7 @@ plt.grid()
 plt.ioff()
 plt.show()
 plt.ion()
-runge_kutta.runge_kutta_fast_step(circle, 0.01, 0.7, 0)
+runge_kutta.runge_kutta_fast_step(circle, 0.001, 0.7, 0)
 plt.xlim(0, -40)
 plt.ylim(0, -30)
 plt.xlabel('X1')
