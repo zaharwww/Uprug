@@ -1,4 +1,3 @@
-
 from Circle import making_circle
 from Trajectory import runge_kutta_method
 import matplotlib.pyplot as plt
@@ -15,7 +14,7 @@ circle.plot_circle()
 runge_kutta = runge_kutta_method.RungeKutta(circle)
 runge_kutta.runge_kutta(circle, 0.001, 0.7, 0)
 
-plt.xlim(0, -40)
+plt.xlim(0, -30)
 plt.ylim(0, -30)
 plt.xlabel('X1')
 plt.ylabel('X2')
