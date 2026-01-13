@@ -1,12 +1,20 @@
-import making_circle
-import runge_kutta_method
+import sys
+import os
+
+current_dir = os.path.dirname(__file__)
+velocity_field_path = os.path.join(current_dir, '..', 'Field of velocity')
+sys.path.append(os.path.abspath(velocity_field_path))
+
+from Circle import making_circle
+from Trajectory import runge_kutta_method
 import matplotlib.pyplot as plt
 import velocity_field
-import streamlines
+from StreamLine import streamlines
+
 plt.ion()
 circle = making_circle.CircleCreate(4)
 circle.create_ring()
-circle.create_circle(100000)
+circle.create_circle(0)
 circle.plot_circle()
 
 
@@ -34,10 +42,11 @@ plt.grid()
 plt.ioff()
 plt.show()
 
-field = velocity_field.VelocityField(x_range=(-30, 2), y_range=(-30, 2), density=20)
-field.plot_multiple_fields(time_list=[0, 1, 2, 3])
+field = velocity_field.VelocityField(x_range=(-30, 2), y_range=(-30, 2), density=50)
+field.plot_velocity_distribution(time_list=[0, 1, 2, 3])
 
 stream = streamlines.Streamlines(x_range=(-30, 2), y_range=(-30, 2), density=50)
+
 fig2, axes2 = stream.plot_multiple_streamlines(
     time_list=[0, 1, 2, 3],
     num_lines=1.2,
