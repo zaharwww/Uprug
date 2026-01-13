@@ -8,7 +8,8 @@ from StreamLine import streamlines
 plt.ion()
 circle = making_circle.CircleCreate(4)
 circle.create_ring()
-circle.create_circle(0)
+num_of_points = 0
+circle.create_circle(num_of_points)
 circle.plot_circle()
 
 runge_kutta = runge_kutta_method.RungeKutta(circle)
@@ -36,10 +37,5 @@ field.plot_velocity_distribution(time_list=[0, 1, 2, 3])
 
 stream = streamlines.Streamlines(x_range=(-30, 2), y_range=(-30, 2), density=50)
 
-fig2, axes2 = stream.plot_multiple_streamlines(
-    time_list=[0, 1, 2, 3],
-    num_lines=1.2,
-    t_end=3,
-    figsize_per_plot=(5, 5)
-)
+fig2, axes2 = stream.plot_multiple_streamlines([0, 1, 2, 3], 1, (5,5))
 plt.show()
